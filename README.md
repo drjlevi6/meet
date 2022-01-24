@@ -1,4 +1,5 @@
 # meet: A serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
+<<<<<<< HEAD
 
 **The user stories and ### Scenarios for this app are listed below:**
 
@@ -61,3 +62,5 @@
 **Given:** user has selected a city.
 **When:** user clicks "Show Chart" button.
 **Then:** a chart opens, showing the number of events of different event types for that city.
+=======
+>>>>>>> 5e557d5d5bc3e423e830d93a8e427be6aa8cdd87
