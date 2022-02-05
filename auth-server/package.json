@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/drjlevi6/meet/issues"
   },
-  "homepage": "https://github.com/drjlevi6/meet#readme"
+  "homepage": "https://github.com/drjlevi6/meet#readme",
+  "dependencies": {
+    "googleapis": "^59.0.0"
+  }
 }
