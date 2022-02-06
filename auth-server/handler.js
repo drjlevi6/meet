@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const OAuth2 = google.aut.OAuth2;
+const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 const SCOPES =
   ["https://www.googleapis.com/auth/calendar.readonly"];
