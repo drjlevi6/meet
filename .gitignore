@@ -2,9 +2,10 @@
 /node_nodules
 node_modules
 jspm_packages
+.env
 
 # Serverless directories
-.Serverless
+.serverless
 
 # Environment variables
 config.json

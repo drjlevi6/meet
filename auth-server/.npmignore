@@ -1,6 +1,13 @@
+.DS_Store
+/node_nodules
+.env
+
 # package directories
 node_modules
 jspm_packages
 
 # Serverless directories
 .serverless
+
+# Environment variables
+config.json
