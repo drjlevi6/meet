@@ -17,7 +17,9 @@ const credentials = {
     "https://www.googleapis.com/oauth2/v1/certs",
   javascript_origins: [
     "https://drjlevi6.github.io", 
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://localhost:8080",
+    "http://192.168.1.69:8080"
   ]
 };
 
@@ -29,10 +31,11 @@ const {
 } = credentials;
 
 const oAuth2Client = new google.auth.OAuth2(
-  client_id,  
+  client_id,
   client_secret,
   redirect_uris[0]
 );
+
 module.exports.getAuthURL = async () => {
   const authUrl = oAuth2Client.generateAuthUrl ({
     access_type: "offline",
