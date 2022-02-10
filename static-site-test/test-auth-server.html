@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <title>Test Auth Server</title>
   </head>
 
@@ -47,7 +47,7 @@
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
       const getAuthURL = 
-        "https://8tzbjul8n7.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
+        "https://ui5pd6s5oa.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       
       getURLElement.onclick = function () {
         fetch(getAuthURL)
@@ -71,7 +71,7 @@
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
       const getToken =
-        "https://8tzbjul8n7.execute-api.us-east-1.amazonaws.com/dev/api/token";
+        "https://ui5pd6s5oa.execute-api.us-east-1.amazonaws.com/dev/api/token";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
