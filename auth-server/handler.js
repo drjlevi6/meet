@@ -29,7 +29,7 @@ const {
 } = credentials;
 
 const oAuth2Client = new google.auth.OAuth2(
-  client_id,
+  client_id,  
   client_secret,
   redirect_uris[0]
 );
@@ -80,7 +80,10 @@ module.exports.getAccessToken = async (event) => {
     // Respond with OAuth token 
     return {
       statusCode: 200,
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+      },
       body: JSON.stringify(token),
     };
   }) // .then
@@ -89,8 +92,55 @@ module.exports.getAccessToken = async (event) => {
     console.error(err);
     return {
       statusCode: 500,
-      body: JSON.stringify(err),
+      body: JSON.stringify(err)
     }; // return
   }); // .catch
 }; // module.exports.getAccessToken
 
+module.exports.getCalendarEvents = async (event) => {
+  const oAuth2Client = new google.auth.OAuth2(
+    client_id,
+    client_secret,
+    redirect_uris[0]
+  );
+  const access_token = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
+  oAuth2Client.setCredentials({ access_token });
+  return new Promise((resolve, reject) => {
+    calendar.events.list(
+      {
+        calendarId: calendar_id,
+        auth: oAuth2Client,
+        timeMin: new Date().toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
+      },
+      (error, response) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(response);
+        }
+      } // (error, response) => {
+    ); // calendar.events.list
+  })  // return
+  .then ((results) => {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+      },
+       body: JSON.stringify({ events: results.data.items })
+    }
+    .catch((err) => {
+      // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        body: JSON.stringify(err)
+      };
+    });
+  });
+} // getCalendarEvents
