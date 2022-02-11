@@ -59,6 +59,7 @@
       getURLElement.onclick = function () {
         fetch(getAuthURL)
           .then(function (response) {
+            console.log('getAuthURL response:', response);
             return response.json();
           })
           .then(function (json) {
@@ -106,8 +107,10 @@
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
         const eventRequest = getCalendarEvents + "/" + access_token;
+        console.log('eventRequest:', eventRequest);
         fetch(eventRequest)
         .then(function (response) {
+          console.log('eventRequest response:', response);
           return response.json();
         })
         .then(function (json) {
