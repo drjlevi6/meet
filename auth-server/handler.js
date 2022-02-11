@@ -111,6 +111,8 @@ module.exports.getCalendarEvents = async (event) => {
   );
   oAuth2Client.setCredentials({ access_token });
   return new Promise((resolve, reject) => {
+    console.log('oAuth2Client.setCredentials, (resolve, reject):',
+      resolve, reject);
     calendar.events.list(
       {
         calendarId: calendar_id,
@@ -132,7 +134,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "http://localhost:8080",
         "Access-Control-Allow-Credentials": true
       },
        body: JSON.stringify({ events: results.data.items })
