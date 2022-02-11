@@ -112,6 +112,15 @@
         })
         .then(function (json) {
           events.innerText = JSON.stringify(json, null, 2);
+        })
+        .catch((err) => {
+          // Handle error
+          console.log('JL: .catch for eventResponse:', err);
+          console.error(err);
+          return {
+            statusCode: 500,
+            body: JSON.stringify(err)
+          }
         });
       };
       // -- END OF STEP 3
