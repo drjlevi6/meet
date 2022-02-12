@@ -134,18 +134,18 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "http://localhost:8080",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
       },
-       body: JSON.stringify({ events: results.data.items })
+    body: JSON.stringify({ events: results.data.items })
     }
-    .catch((err) => {
-      // Handle error
-      console.error(err);
-      return {
-        statusCode: 500,
-        body: JSON.stringify(err)
-      };
-    });
+  .catch((err) => {
+    // Handle error
+    console.error(err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify(err)
+    };
+  });
   });
 } // getCalendarEvents
