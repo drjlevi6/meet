@@ -44,7 +44,8 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": [ "*", 
+      "https://coach-courses-us.s3.amazonaws.com" ]
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -84,7 +85,8 @@ module.exports.getAccessToken = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": [ "*", 
+        "https://coach-courses-us.s3.amazonaws.com" ],
         "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify(token),
@@ -134,7 +136,8 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": [ "*", 
+        "https://coach-courses-us.s3.amazonaws.com" ],
         "Access-Control-Allow-Credentials": true
       },
     body: JSON.stringify({ events: results.data.items })
@@ -145,7 +148,8 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 500,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": [ "*", 
+        "https://coach-courses-us.s3.amazonaws.com" ],
         "Access-Control-Allow-Credentials": true
       },
       body: JSON.stringify(err)
