@@ -8,7 +8,7 @@ const SCOPES =
 const credentials = {
   client_secret: process.env.CLIENT_SECRET,
   client_id: process.env.CLIENT_ID,
-  redirect_uris: ["https://drjlevi6.github.io/meet/"],
+  redirect_uris: ["https://drjlevi6.github.io/meet"],
   calendar_id: process.env.CALENDAR_ID,
   project_id: process.env.PROJECT_ID,
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
@@ -18,11 +18,6 @@ const credentials = {
   javascript_origins: [
     "https://drjlevi6.github.io", 
     "http://localhost:3000",
-    "http://localhost:8080",
-    "http://localhost:8081",
-    "http://127.0.0.1",
-    "http://192.168.1.69:8081",
-    "http://192.168.1.69:8080"
   ]
 };
 
@@ -87,8 +82,7 @@ module.exports.getAccessToken = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": 'http://localhost:8080',
-        "Access-Control-Allow-Credentials": true
+        "Access-Control-Allow-Origin": 'http://localhost:8080'
       },
       body: JSON.stringify(token),
     };
@@ -137,8 +131,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 200,
       headers: {
-        "Access-Control-Allow-Origin": 'http://localhost:8080',
-        "Access-Control-Allow-Credentials": true
+        "Access-Control-Allow-Origin": 'http://localhost:8080'
       },
     body: JSON.stringify({ events: results.data.items })
     }
@@ -148,8 +141,7 @@ module.exports.getCalendarEvents = async (event) => {
     return {
       statusCode: 500,
       headers: {
-        "Access-Control-Allow-Origin": 'http://localhost:8080',
-        "Access-Control-Allow-Credentials": true
+        "Access-Control-Allow-Origin": 'http://localhost:8080'
       },
       body: JSON.stringify(err)
     };
