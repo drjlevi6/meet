@@ -6,11 +6,11 @@ const calendar = google.calendar("v3");
 const SCOPES =
   ["https://www.googleapis.com/auth/calendar.readonly"];
 const credentials = {
-  client_secret: process.env.CLIENT_SECRET,
   client_id: process.env.CLIENT_ID,
+  project_id: process.env.PROJECT_ID,
+  client_secret: process.env.CLIENT_SECRET,
   redirect_uris: ["https://drjlevi6.github.io/meet"],
   calendar_id: process.env.CALENDAR_ID,
-  project_id: process.env.PROJECT_ID,
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: 
@@ -21,12 +21,7 @@ const credentials = {
   ]
 };
 
-const { 
-  client_secret, 
-  client_id, 
-  redirect_uris, 
-  calendar_id 
-} = credentials;
+const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 
 const oAuth2Client = new google.auth.OAuth2(
   client_id,
@@ -42,7 +37,7 @@ module.exports.getAuthURL = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': 'http://localhost:8080'
+      'Access-Control-Allow-Origin': "*"
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -107,6 +102,7 @@ module.exports.getCalendarEvents = async (event) => {
     `${event.pathParameters.access_token}`
   );
   oAuth2Client.setCredentials({ access_token });
+  console.log('oAuth2Client.setCredentials(), access_token:', access_token);
   return new Promise((resolve, reject) => {
     console.log('oAuth2Client.setCredentials, (resolve, reject):',
       resolve, reject);
