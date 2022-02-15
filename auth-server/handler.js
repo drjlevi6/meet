@@ -102,9 +102,7 @@ module.exports.getCalendarEvents = async (event) => {
     `${event.pathParameters.access_token}`
   );
   oAuth2Client.setCredentials({ access_token });
-  console.log('oAuth2Client.setCredentials(), access_token:', access_token);
   return new Promise((resolve, reject) => {
-    console.log('oAuth2Client.setCredentials, (resolve, reject):',
       resolve, reject);
     calendar.events.list(
       {
