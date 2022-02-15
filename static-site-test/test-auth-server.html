@@ -51,12 +51,11 @@
       const resultElement = document.getElementById("result");
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
-      const getAuthURL = 
+      const getAuthURL =
         "https://7n5dvikghc.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       
-      //var opts = { 'header': { 'mode': 'no-cors'}}  
-      
       getURLElement.onclick = function () {
+      console.log('getURLElement.onclick, before fetch:', getAuthURL);
         fetch(getAuthURL)
           .then(function (response) {
             return response.json();
