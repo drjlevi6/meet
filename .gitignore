@@ -9,3 +9,4 @@ jspm_packages
 
 # Environment variables
 config.json
+node_modules
