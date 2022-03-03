@@ -10,6 +10,7 @@ describe('<EventList /> component', () => {
       <EventList events={mockData} />
     );
     expect(EventListWrapper.
-      find(Event)).toHaveLength(mockData.length);
+      find(Event)).
+        toHaveLength(mockData.length);
   });
 });
