@@ -16,13 +16,4 @@ class EventList extends Component {
   } // render
 } // class EventList
 
-class EventList extends Component {
-  render() {
-    return (
-      <div>
-      </div>
-    );
-  }
-}
-
 export default EventList;
