@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Event from '../Event';
-import mockData from './mock-data';
+import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
-  test("show an event's details" = (event) => {
+  test("show an event's details", () => {
     const EventWrapper = shallow(
       <Event details={mockData}/>
     );
