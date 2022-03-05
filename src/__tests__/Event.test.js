@@ -6,8 +6,8 @@ import { mockData } from '../mock-data';
 describe('<Event /> component', () => {
   test("show an event's details", () => {
     const EventWrapper = shallow(
-      <Event event={mockData[0]}/> 
-    );  // {mockData[0]} is first event
+      <Event event={mockData[0]}/>
+    );
       expect(EventWrapper.find(".event-details").exists()).toEqual(false);
       expect(EventWrapper.find('button').exists()  ).toEqual(true);
       EventWrapper.find('button').simulate('click');  /* not sure we need '.first()'
