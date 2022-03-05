@@ -19,7 +19,7 @@ describe('<Event /> component', () => {
     const EventWrapper = shallow(
       <Event event={mockData[0]}/>
     );
-    console.log('isExpanded:', EventWrapper.state.isExpanded);
+    console.log('isExpanded:', EventWrapper.isExpanded);
   });
   
 });
