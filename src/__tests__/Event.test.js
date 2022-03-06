@@ -16,7 +16,8 @@ describe('<Event /> component', () => {
 
     //  not sure we needed '.first()'  after EventWrapper.find('button')
     EventWrapper.find('button').simulate('click'); 
-    expect(EventWrapper.find(".event-details").exists()).toEqual(true); // appears to work
+    expect(EventWrapper.find(".event-details").exists())
+      .toEqual(true); // appears to work
   });
 
   test("hide an event's details", () => {
