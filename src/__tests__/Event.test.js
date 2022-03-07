@@ -26,6 +26,8 @@ describe('<Event /> component', () => {
   });
 
   test("hide an event's details", () => {
-    console.log('isExpanded:', isExpanded);
+    expect(EventWrapper.find(".event-details").exists())
+    .toEqual(true);
   });
+  test.todo('finish hiding an event\'s details');
 });
