@@ -5,12 +5,15 @@ import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
   let EventWrapper;
+  let isExpanded;
   beforeAll(() => {
       EventWrapper = shallow(<Event event={mockData[0]} />);
+      const isExpanded = EventWrapper.state('isExpanded');
+      console.log('beforeAll, EventWrapper.state:', isExpanded);
   })
 
   test("show an event's details", () => {
-    const {isExpanded} = this.state;
+
     expect(EventWrapper.find(".event-details").exists()).toEqual(false);
     expect(EventWrapper.find('button').exists()  ).toEqual(true);
 
@@ -21,6 +24,6 @@ describe('<Event /> component', () => {
   });
 
   test("hide an event's details", () => {
-    console.log('isExpanded:', EventWrapper.isExpanded);
+    console.log('isExpanded:', isExpanded);
   });
 });
