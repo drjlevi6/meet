@@ -16,12 +16,7 @@ class Event extends Component {
     </div>;
   }
   toggleExpandedDetails() {
-    console.log('Event.js, toggleExpandedDetails, ' + 
-      'isExpanded before setState:', this.state.isExpanded);
     this.setState({isExpanded: !this.state.isExpanded});
-    console.log('Event.js, toggleExpandedDetails, ' + 
-    'isExpanded after setState:', this.state.isExpanded);
-
   }
 }
 export default Event;
