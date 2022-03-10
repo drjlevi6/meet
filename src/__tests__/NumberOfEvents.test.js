@@ -9,8 +9,13 @@ describe('<Event /> component', () => {
   beforeAll(() => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents />);
     numEvents = NumberOfEventsWrapper.state('numberOfEvents')
-      console.log('numEvents:', numEvents);
+      console.log('typeof(numEvents):', 
+      typeof(numEvents));
   })
 
-  test.todo('show number of events')
+  test('show number of events', () => {
+      //expect(typeof NumberOfEventsWrapper.state('numberOfEvents'))
+      expect(typeof numEvents)
+      .toBe('number')
+  });
 });
