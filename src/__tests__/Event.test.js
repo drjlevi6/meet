@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Event from '../Event';
 import { mockData } from '../mock-data';
+import EventList from '../EventList';
 
 describe('<Event /> component', () => {
   let EventWrapper;
@@ -14,9 +15,9 @@ describe('<Event /> component', () => {
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
       .find('button').exists()  ).toEqual(true);
-
-    /*  Don't thin we need '.first()'  after 
-    EventWrapper.find('button') */
+      expect(EventWrapper
+        .find('event-div h2').exists() );
+ 
     EventWrapper.find('button').simulate('click');
     expect(EventWrapper.state('isExpanded')).toBe(true);
     expect(EventWrapper.find(".event-details").exists())
