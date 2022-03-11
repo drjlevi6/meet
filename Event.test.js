@@ -14,7 +14,6 @@ describe('<Event /> component', () => {
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
       .find('button').exists()  ).toEqual(true);
-    console.log('EventWrapper.props():', EventWrapper.props());
 
     /*  Don't thin we need '.first()'  after 
     EventWrapper.find('button') */

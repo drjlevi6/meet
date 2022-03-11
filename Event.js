@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import Alert from 'react-bootstrap/Alert';
 
 class Event extends Component {
   state = { isExpanded: false, details: [] }
   render() { // returned <h2> was this.props.event.summary
-    return <Alert
-      className='event-alert'
-      variant='outlined'
-    >
-       <Alert.Heading> { this.props.summary }u</Alert.Heading>
-     
+     return <div>
+      <h2>{ this.props.summary }</h2>
       {
         this.state.isExpanded &&
         <div className='event-details'>
@@ -18,9 +13,8 @@ class Event extends Component {
       }
       <button onClick={() => 
         this.toggleExpandedDetails()}>Show/Hide Details</button>
-    </Alert>;
+    </div>;
   }
-
   toggleExpandedDetails() {
     this.setState({isExpanded: !this.state.isExpanded});
   }

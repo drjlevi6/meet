@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import './index.css';
-
+import App from './App';
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
+console.log('index.js');
 ReactDOM.render(
- <React.StrictMode>
+  <React.StrictMode>
     <h2>index.js: ReactDOM.render()</h2>
     <App />
   </React.StrictMode>,
