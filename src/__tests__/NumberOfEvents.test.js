@@ -15,7 +15,7 @@ describe('<Event /> component', () => {
 
   test('show number of events', () => {
       //expect(typeof NumberOfEventsWrapper.state('numberOfEvents'))
-      expect(typeof numEvents)
-      .toBe('number')
+      expect(typeof numEvents).toBe('number')
+      
   });
 });
