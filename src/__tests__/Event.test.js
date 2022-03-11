@@ -17,6 +17,8 @@ describe('<Event /> component', () => {
       .find('button').exists()  ).toEqual(true);
       expect(EventWrapper
         .find('event-div h2').exists() );
+      console.log('show an event\'s details:', 
+        EventWrapper.props());
  
     EventWrapper.find('button').simulate('click');
     expect(EventWrapper.state('isExpanded')).toBe(true);
