@@ -4,10 +4,9 @@ import Event from '../Event';
 import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
-  let EventWrapper, md0;
+  let EventWrapper;
   beforeEach(() => {
       EventWrapper = shallow(<Event event={mockData[0]} />);
-      md0 =  mockData[0];
   })
 
   test("show an event's details", () => {
@@ -15,9 +14,9 @@ describe('<Event /> component', () => {
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
       .find('button').exists()  ).toEqual(true);
-    console.log(EventWrapper.find('.summary').exists());
+    console.log('EventWrapper.props():', EventWrapper.props());
 
-    /*  Don't think we need '.first()'  after 
+    /*  Don't thin we need '.first()'  after 
     EventWrapper.find('button') */
     EventWrapper.find('button').simulate('click');
     expect(EventWrapper.state('isExpanded')).toBe(true);
