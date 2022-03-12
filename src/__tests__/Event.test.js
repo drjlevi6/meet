@@ -4,9 +4,10 @@ import Event from '../Event';
 import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
-  let EventWrapper;
+  let EventWrapper, md0;
   beforeEach(() => {
       EventWrapper = shallow(<Event event={mockData[0]} />);
+      md0 =  mockData[0];
   })
 
   test("show an event's details", () => {
@@ -14,7 +15,9 @@ describe('<Event /> component', () => {
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
       .find('button').exists()  ).toEqual(true);
-    console.log('EventWrapper.props():', EventWrapper.props());
+//      console.log('mockData:',md0.summary, '\n', md0.location);
+      expect(EventWrapper.find('event-div h2'))
+        .toBe(md0.summary);
 
     /*  Don't thin we need '.first()'  after 
     EventWrapper.find('button') */
