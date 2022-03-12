@@ -15,7 +15,6 @@ describe('<Event /> component', () => {
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
       .find('button').exists()  ).toEqual(true);
-//      console.log('mockData:',md0.summary, '\n', md0.location);
       expect(EventWrapper.find('event-div h2'))
         .toBe(md0.summary);
 
