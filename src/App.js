@@ -7,7 +7,6 @@ import Event from './Event';
 
 class App extends Component {
   render() {
-    console.log('App.js: render()');
     return (
       <div className="App">
         <h2>Meet App</h2>

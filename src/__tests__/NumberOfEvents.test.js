@@ -8,10 +8,8 @@ describe('<Event /> component', () => {
   let NumberOfEventsWrapper, numEvents;
   beforeAll(() => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents />);
-    numEvents = NumberOfEventsWrapper.state('numberOfEvents')
-      console.log('typeof(numEvents):', 
-      typeof(numEvents));
-  })
+    numEvents = NumberOfEventsWrapper.state('numberOfEvents');
+  });
 
   test('show number of events', () => {
       //expect(typeof NumberOfEventsWrapper.state('numberOfEvents'))
