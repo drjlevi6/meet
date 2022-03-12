@@ -5,7 +5,7 @@ class Event extends Component {
   state = { isExpanded: false, details: [] }
   render() { // returned <h2> was this.props.event.summary
     return <div  className='event-div'>
-      <h2>{this.props.summary}</h2>
+      <h2 className='summary'>{this.props.summary}</h2>
      
       {
         this.state.isExpanded &&
