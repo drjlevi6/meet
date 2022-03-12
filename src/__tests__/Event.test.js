@@ -14,11 +14,10 @@ describe('<Event /> component', () => {
     expect(EventWrapper
       .find(".event-details").exists()).toEqual(false);
     expect(EventWrapper
-      .find('button').exists()  ).toEqual(true);
-    console.log('EventWrapper.props():', EventWrapper.props());
+      .find('button').exists()  ).toEqual(true); 
+    expect(EventWrapper.find('.summary')
+      .text()).toBe(md0['summary']); // this works
 
-    /*  Don't think we need '.first()'  after 
-    EventWrapper.find('button') */
     EventWrapper.find('button').simulate('click');
     expect(EventWrapper.state('isExpanded')).toBe(true);
     expect(EventWrapper.find(".event-details").exists())
