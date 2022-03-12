@@ -3,9 +3,9 @@ import Alert from 'react-bootstrap/Alert';
 
 class Event extends Component {
   state = { isExpanded: false, details: [] }
-  render() { // returned <h2> was this.props.event.summary
+  render() {
     return <div  className='event-div'>
-      <h2 className='summary'>{this.props.summary}</h2>
+      <h2 className='summary'>{this.props.event.summary}</h2>
      
       {
         this.state.isExpanded &&
