@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Alert from 'react-bootstrap/Alert';
 
 class Event extends Component {
   state = { isExpanded: false, details: [] }
