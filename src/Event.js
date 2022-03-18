@@ -12,10 +12,19 @@ class Event extends Component {
           <div className='event-details'>
             <p>{ eData.start.dateTime }
               ({eData.start.timeZone} Time)</p>
+            <p>@{eData.summary} | 
+              {eData.location}</p>
+            <h3>About event:</h3>
+            <a className='html-link'
+              href={this.eData.htmlLink}>
+              See details on Google Calendar
+            </a>
+            <p>{eData.description}</p>
           </div> 
         }
         <button onClick={() => 
-          this.toggleExpandedDetails()}>Show/Hide Details</button>
+          this.toggleExpandedDetails()}>
+            Show/Hide Details</button>
       </div>
     )
   }
